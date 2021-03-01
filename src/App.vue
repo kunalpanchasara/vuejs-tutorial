@@ -17,16 +17,16 @@
 
     <hr>
 
-    <h4>Dependancy Method for cumminication</h4>
+    <h4>Dependancy Method for cummunication</h4>
     <grand-parent></grand-parent>
   </div>
 </template>
 
 <script>
-import  ParentCard from './components/ParentCard';
-import ParentCard2 from './components/ParentCard2.vue';
-import ParentCard3 from './components/ParentCard3.vue';
-import GrandParent from './components/GrandParent.vue';
+import GrandParent from './components/parent-child/GrandParent';
+import  ParentCard from './components/parent-child/ParentCard';
+import ParentCard2 from './components/sibling-components/ParentCard2';
+import ParentCard3 from './components/event-bus/ParentCard3';
 
 export default {
   name: 'App',
@@ -35,11 +35,10 @@ export default {
     ParentCard,
     ParentCard2,
     ParentCard3,
-    
   },
-   provide: {
-        message: 'Hello Vue!'
-    }
+  provide: {
+      message: 'Hello Vue!'
+  }
 }
 </script>
 

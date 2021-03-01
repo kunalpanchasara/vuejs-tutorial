@@ -6,6 +6,7 @@
                 <p>Inject Message: {{message}}</p><br>
                 <button @click="sendMessage" class="btn btn-info">Send Child A Message</button>
                 <div v-if="childmessage" class="card-text alert alert-warning" v-html="childmessage"></div>
+                
                 <button v-if="childmessage" @click="clear" class="btn btn-success">Ok</button>
                 
                 <!-- Child component -->
