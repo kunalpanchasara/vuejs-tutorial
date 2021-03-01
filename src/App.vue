@@ -2,45 +2,29 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
 
-    <h4>Parent Child communication</h4>
-    <parent-card></parent-card>
+    <h4>Vue Mixins</h4>
+    
+    <component-a></component-a>
+    
+    <br>
 
-    <hr>
-
-    <h4>Sibiling components communication using Eventbus</h4>
-    <parent-card-2></parent-card-2>
-
-    <hr>
-
-    <h4>Pass data to any components</h4>
-    <parent-card-3></parent-card-3>
-
-    <hr>
-
-    <h4>Dependancy Method for cummunication</h4>
-    <grand-parent></grand-parent>
+    <component-b></component-b>
   </div>
 </template>
 
 <script>
-import GrandParent from './components/parent-child/GrandParent';
-import  ParentCard from './components/parent-child/ParentCard';
-import ParentCard2 from './components/sibling-components/ParentCard2';
-import ParentCard3 from './components/event-bus/ParentCard3';
+import ComponentA from './components/other/componentA.vue'
+import ComponentB from './components/other/componentB.vue'
 
 export default {
   name: 'App',
   components: {
-    GrandParent,
-    ParentCard,
-    ParentCard2,
-    ParentCard3,
-  },
-  provide: {
-      message: 'Hello Vue!'
+    ComponentA,
+    ComponentB
   }
 }
 </script>
+    
 
 <style>
 #app {
