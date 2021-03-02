@@ -6,10 +6,10 @@
   </div>
 </template>
 <script>
-
-
+import clickedMixin from '../../mixins/clickedMixin';
 export default {
     name: "componentB",
+    mixins: [clickedMixin],
     created: function() {
         console.log('component hook called')
     },
