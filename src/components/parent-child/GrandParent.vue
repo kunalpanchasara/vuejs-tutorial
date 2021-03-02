@@ -1,7 +1,7 @@
 <template>
    <div id="grandparent">
       <h2>Grand Parent</h2>
-      <p>Inject Message: {{message}}</p><br>
+      <p v-if="message">Inject Message: {{message}}</p><br>
       
       <parent-card></parent-card>    
     </div>
@@ -15,7 +15,7 @@ export default {
     name: 'GrandParent',
     inject: ['message'],
     mounted() {
-        console.log(this.message);
+        //console.log(this.message);
     }
    
 }

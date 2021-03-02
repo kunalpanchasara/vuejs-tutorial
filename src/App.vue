@@ -37,7 +37,7 @@ export default {
     ParentCard3,
   },
   provide: {
-      message: 'Hello Vue!'
+      message: ''
   }
 }
 </script>

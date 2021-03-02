@@ -3,7 +3,7 @@
         <div class="card m-2" style="width: 40rem;">
             <div class="card-body">
                 <h5 class="card-title" v-text="thecardtitle"></h5>
-                <p>Inject Message: {{message}}</p><br>
+                <p v-if="message">Inject Message: {{message}}</p><br>
                 <button @click="sendMessage" class="btn btn-info">Send Child A Message</button>
                 <div v-if="childmessage" class="card-text alert alert-warning" v-html="childmessage"></div>
                 
@@ -46,7 +46,7 @@ import ChildCard from './ChildCard'
         },
         inject: ['message'],
         mounted() {
-            console.log(this.message);
+            //console.log(this.message);
         }
     }
 </script>
