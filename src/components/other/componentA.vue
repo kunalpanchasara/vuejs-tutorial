@@ -1,19 +1,28 @@
 <template>
   <div>
-    <button v-on:click="clicked('you just clicked on button  1')">
-      Button 1 from ComponentA
-    </button>
+    <input type="text" v-model="name" placeholder="Enter Keyword">
+    <br>
+    <p>Basic Filter: {{name | capitalize}}</p>
+    <br>
+    <p>Global Filter: {{name | reverse}}</p>
+    <br>
+    <p>Filter chain: {{name | capitalize | reverse }}</p>
+    <br>
+    <p v-if="name">Filter with arguments 1: {{name | wrap('before ', ' after')}}</p>
+    <br>
+    <p v-if="name">Filter with arguments 2: {{name | readMore(5, '...')}}</p>
   </div>
 </template>
 <script>
-import clickedMixin from '../../mixins/clickedMixin';
+
 export default {
     name: "componentA",
-    mixins: [clickedMixin],
+    
     data: function () {
         return {
             message: 'goodbye',
-            bar: 'def'
+            bar: 'def',
+            name: ''
         }
     },
     created: function () {
@@ -21,9 +30,14 @@ export default {
         // => { message: "goodbye", foo: "kp", bar: "def" }
     },
     methods: {
-        clicked(value) {
-            alert(value);
-        }
+       
+    },
+    filters: {
+      capitalize: function (value) {
+        if (!value) return ''
+        value = value.toString()
+        return value.charAt(0).toUpperCase() + value.slice(1)
+      }
     }
 }
 </script>

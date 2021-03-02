@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
 
-    <h4>Vue Mixins</h4>
+    <h4>Vue Filters</h4>
     
     <component-a></component-a>
     
